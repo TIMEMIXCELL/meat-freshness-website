@@ -30,7 +30,7 @@ jobs:
         pip install flask
         pip install flask-sqlalchemy
         pip install tensorflow
-        pip install PIL
+        pip install Pillow
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
