@@ -11,11 +11,11 @@ import os
 import uuid
 
 # Initialize Flask app
-app = Flask(__name__, template_folder='C:/Users/veb72/Documents/GitHub/Intelligence/Project/template')
+app = Flask(__name__, template_folder='template')
 
 #config DB
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///meat.db'
-UPLOAD_FOLDER = 'C:/Users/veb72/Documents/GitHub/Intelligence/Picture'
+UPLOAD_FOLDER = 'Picture'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 db = SQLAlchemy(app)
 
@@ -38,7 +38,7 @@ def save_base64_image(base64_string, folder, filename):
     return os.path.join(folder, filename)
 
 # Load your pre-trained model
-model_path = "C:/Users/veb72/Documents/GitHub/Intelligence/Project/meat_freshness_model_new.h5"
+model_path = "meat_freshness_model_new.h5"
 try:
     model = load_model(model_path)
 except Exception as e:
