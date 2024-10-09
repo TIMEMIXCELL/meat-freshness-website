@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+    <style>
+        body {
+            background-color: bisque;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            margin-top: -50px;
+        }
+
+        h1 {
+            font-size: 5vw;
+            color: darkred;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 4vw;
+            color: darkgreen;
+            margin-bottom: 15px;
+            animation: zoomEffect 2s infinite ease-in-out;
+        }
+
+        /* Animation */
+        @keyframes zoomEffect {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        img {
+            max-width: 300px;
+            border-radius: 15px;
+            border: 3px double darkred;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-btn, .submit-btn, .choice-option input[type="submit"] {
+            background-color: darkred;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 4vw;
+            margin-top: 15px;
+            margin: 15px;
+        }
+
+        .back-btn:hover, .submit-btn:hover, .choice-option input[type="submit"]:hover {
+            background-color: crimson;
+        }
+
+        .sigmar-one-regular {
+            font-family: "Sigmar One", sans-serif;
+        }
+
+        /* Styling for the choices */
+        .choices {
+            /*text-align: left;*/
+            margin-top: 15px;
+            font-family: "Sigmar One", sans-serif;
+        }
+
+        .choices h1 {
+            font-size: 5vw;
+            color: darkred;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-size: 4vw;
+            color: darkblue;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 4vw;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 768px) {
+            h1, p, .choices h1 {
+                font-size: 20px;
+            }
+
+            .back-btn, .submit-btn {
+                font-size: 18px;
+            }
+
+            select {
+                font-size: 18px;
+            }
+        }
+
+        /* เปลี่ยนสีตาม class */
+        .fresh {
+            color: green;
+        }
+        .half-fresh {
+            color: yellowgreen;
+        }
+        .spoiled {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="sigmar-one-regular">Prediction Result</h1>
+        <p class="sigmar-one-regular 
+        {% if result == 'Fresh' %}fresh{% elif result == 'Half-fresh' %}half-fresh{% elif result == 'Spoiled' %}spoiled{% endif %}">
+        <strong>{{ result }}</strong></p>
+        <img src="{{ img_data }}" alt="Predicted Image" style="width: 150px; height: 150px;">
+        
+        <div class="choices">
+            <h1 class="sigmar-one-regular">Please Help Us Improve Our Meat Prediction</h1>
+            <form action="{{ url_for('submit_choice') }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="img_data_forward" value="{{ img_data }}">
+                <label for="choice" style="font-size: 20px;">Select your choice:</label>
+                <select name="choice" id="choice">
+                    <option value="Fresh">Fresh</option>
+                    <option value="Half-fresh">Half-fresh</option>
+                    <option value="Spoiled">Spoiled</option>
+                    <option value="Not a Meat">Not a meat</option>
+                </select>
+                <div><input type="submit" value="Submit Choice" class="submit-btn"></div>
+            </form>
+        </div>
+
+        <form action="/">
+            <input type="submit" value="Go Back" class="back-btn">
+        </form>
+    </div>
+</body>
+</html>
