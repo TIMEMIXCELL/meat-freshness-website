@@ -28,4 +28,4 @@ jobs:
       run: sleep 10  # Wait for the app to start
     - name: Run tests
       run: |
-        pytest -v
+        pytest -v tests/
