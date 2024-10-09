@@ -135,14 +135,14 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="sigmar-one-regular">Prediction Result</h1>
+        <h1 class="sigmar-one-regular">Classification Result</h1>
         <p class="sigmar-one-regular 
         {% if result == 'Fresh' %}fresh{% elif result == 'Half-fresh' %}half-fresh{% elif result == 'Spoiled' %}spoiled{% endif %}">
         <strong>{{ result }}</strong></p>
         <img src="{{ img_data }}" alt="Predicted Image" style="width: 150px; height: 150px;">
         
         <div class="choices">
-            <h1 class="sigmar-one-regular">Please Help Us Improve Our Meat Prediction</h1>
+            <h1 class="sigmar-one-regular">Please Help Us Improve Our Meat Classification</h1>
             <form action="{{ url_for('submit_choice') }}" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="img_data_forward" value="{{ img_data }}">
                 <label for="choice" style="font-size: 20px;">Select your choice:</label>
