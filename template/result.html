@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <!-- Buttons section: Go Back and conditionally View Menu or Deal with Spoiled -->
+        <!-- 3 Statement Button to each page (Fresh, Half, Spoil) -->
         <div class="mt-3 d-flex justify-content-center">
             <form action="/" class="me-2">
                 <input type="submit" value="Go Back" class="btn btn-secondary">
@@ -41,11 +41,15 @@
 
             {% if result == 'Fresh' %}
             <form action="{{ url_for('meatnu') }}" class="ml-2">
-                <input type="submit" value="View Menu" class="btn btn-primary">
+                <input type="submit" value="Me(at)nu" class="btn btn-primary">
             </form>
             {% elif result == 'Spoiled' %}
             <form action="{{ url_for('deals') }}" class="ml-2">
                 <input type="submit" value="Deal with Spoiled" class="btn btn-warning">
+            </form>
+            {% elif result == 'Half-fresh' %}
+            <form action="{{ url_for('half') }}" class="ml-2">
+                <input type="submit" value="MysteriousMeat" class="btn btn-warning">
             </form>
             {% endif %}
         </div>
@@ -53,7 +57,7 @@
 
     <script>
         document.getElementById('choiceForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
+            event.preventDefault();
             
             document.getElementById('alertBox').style.display = 'block';
 
