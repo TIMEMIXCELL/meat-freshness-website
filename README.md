@@ -33,7 +33,11 @@ Before running the application, you need to install the required Python packages
 
 ### How to access to website
 After running app.py successfully
+
 0. The application will display two IP addresses:
+   
       - The first IP is for localhost, allowing access from the same machine.
+        
       - The second IP is for users on the same network as the program runner, enabling them to access the application remotely
+
 1. Hold Ctrl and Click on Ip to access to website
