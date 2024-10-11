@@ -21,8 +21,11 @@ Before running the application, you need to install the required Python packages
    pip install -r requirements.txt
 5. If you can't run `pip`, Try `py` instead:
    ```bash
-   py -m pip install -r requirements.tx
+   py -m pip install -r requirements.txt
    
 6. run this in command prompt (Windows) or terminal (Mac/Linux):
    ```bash
    python app.py
+   or
+   ```bash
+   py app.py
