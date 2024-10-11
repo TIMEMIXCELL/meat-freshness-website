@@ -29,5 +29,4 @@ Before running the application, you need to install the required Python packages
    
    or
    
-   ```bash
    py app.py
