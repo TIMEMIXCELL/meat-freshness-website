@@ -11,11 +11,11 @@ import os
 import uuid
 
 # Initialize Flask app
-app = Flask(__name__, template_folder='template')
+app = Flask(__name__, template_folder='./template')
 
 #config DB
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///meat.db'
-UPLOAD_FOLDER = 'Picture'
+UPLOAD_FOLDER = './picture'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 db = SQLAlchemy(app)
 
@@ -38,7 +38,7 @@ def save_base64_image(base64_string, folder, filename):
     return os.path.join(folder, filename)
 
 # Load your pre-trained model
-model_path = "meat_freshness_model_new.h5"
+model_path = "./meat_freshness_model_add_layer.h5"
 try:
     model = load_model(model_path)
 except Exception as e:
@@ -140,6 +140,18 @@ def submit_choice():
 
 
     return render_template('index.html')
+
+@app.route('/meatnu')
+def meatnu():
+    return render_template('meatnu.html')
+
+@app.route('/deals')
+def deals():
+    return render_template('deals.html')
+
+@app.route('/half')
+def half():
+    return render_template('half.html')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
