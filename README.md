@@ -25,8 +25,8 @@ Before running the application, you need to install the required Python packages
    
 6. run this in command prompt (Windows) or terminal (Mac/Linux):
    ```bash
-   python app.py`
+   python app.py
 
-   or
-   
+7. If you can't run `pip`, Try `py` instead:
+   ```bash
    py app.py
