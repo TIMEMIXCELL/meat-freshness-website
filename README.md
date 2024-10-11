@@ -38,6 +38,6 @@ After running app.py successfully
    
       - The first IP is for localhost, allowing access from the same machine.
         
-      - The second IP is for users on the same network as the program runner, enabling them to access the application remotely
+      - The second IP is for users on the same network as the program runner, enabling them to access the application remotely.
 
-1. Hold Ctrl and Click on Ip to access to website
+1. Hold Ctrl and Click on Ip to access the website.
