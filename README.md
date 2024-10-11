@@ -13,16 +13,14 @@ Before running the application, you need to install the required Python packages
 1. Download the repository as a ZIP file and unzip it.
 2. Open a command prompt (Windows) or terminal (Mac/Linux).
 3. Navigate to the unzipped folder:
-
    ```bash
    cd path
-
    #replace path with path to unzip folder
-
-4.run this in command prompt (Windows) or terminal (Mac/Linux):
-
+4. run this in command prompt (Windows) or terminal (Mac/Linux):
    ```bash
    pip install -r requirements.txt
+5. run this in command prompt (Windows) or terminal (Mac/Linux):
 
+   ```bash
+   python app.py
 
-5.run app.py
