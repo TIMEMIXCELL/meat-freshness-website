@@ -16,17 +16,17 @@ Before running the application, you need to install the required Python packages
    ```bash
    cd path
    #replace path with path to unzip folder
-4. run this in command prompt (Windows) or terminal (Mac/Linux):
+4. Install libraries that require for running programs:
    ```bash
    pip install -r requirements.txt
 5. If you can't run `pip`, Try `py` instead:
    ```bash
    py -m pip install -r requirements.txt
    
-6. run this in command prompt (Windows) or terminal (Mac/Linux):
+6. run main programs:
    ```bash
    python app.py
 
-7. If you can't run `pip`, Try `py` instead:
+7. If you can't run `python`, Try `py` instead:
    ```bash
    py app.py
