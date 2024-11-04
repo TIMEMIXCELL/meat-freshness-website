@@ -58,11 +58,27 @@
     <script>
         document.getElementById('choiceForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            
-            document.getElementById('alertBox').style.display = 'block';
-
-            this.style.display = 'none';
-
+    
+            // Collect form data
+            const formData = new FormData(this);
+    
+            // Send data to server with fetch API
+            fetch('/submit_choice', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Show success alert
+                document.getElementById('alertBox').style.display = 'block';
+    
+                // Hide the form after submission
+                document.getElementById('choiceForm').style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Optionally, show an error message if something goes wrong
+            });
         });
     </script>
 {% endblock %}
