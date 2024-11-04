@@ -14,7 +14,7 @@ import uuid
 app = Flask(__name__, template_folder='./template')
 
 #config DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///meat.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://admin:K_AE5A((m%*C?!r>)4w$sGPo$Bq$@database-app.ctekoqmq854p.us-east-1.rds.amazonaws.com:3306/meat_db'
 UPLOAD_FOLDER = './picture'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 db = SQLAlchemy(app)
